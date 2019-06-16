@@ -4,7 +4,7 @@ This program takes a filename as a command line argument
 and prints out the most common words in order.
 
 This repository follows along with
-(a blog post)[https://blog.codekopp.com/rust-basic-keyword-counter/]
+[a blog post](https://blog.codekopp.com/rust-basic-keyword-counter/)
 on my personal site.
 
 ## Getting Started
