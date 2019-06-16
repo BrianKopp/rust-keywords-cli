@@ -28,7 +28,6 @@ fn main() {
             .entry(content_match.as_str())
             .or_insert(0);
         *count += 1;
-        println!("{} - {}", content_match.as_str(), count);
     }
 
     println!("Results:");
