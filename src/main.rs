@@ -2,6 +2,7 @@ use std::env;
 use std::fs;
 use std::process;
 use std::io;
+use std::collections::HashMap;
 extern crate regex;
 use regex::Regex;
 
@@ -21,7 +22,12 @@ fn main() {
 
     // create regular expression
     let re = Regex::new(r"[a-zA-Z_$][a-zA-Z_$0-9]*").unwrap();
+    let mut counts_by_word: HashMap<&str, u32> = HashMap::new();
     for content_match in re.find_iter(&contents) {
-        println!("{}", content_match.as_str());
+        let count = counts_by_word
+            .entry(content_match.as_str())
+            .or_insert(0);
+        *count += 1;
+        println!("{} - {}", content_match.as_str(), count);
     }
 }
