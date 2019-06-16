@@ -32,7 +32,7 @@ fn main() {
 
     println!("Results:");
     let mut sorted_words: Vec<_> = counts_by_word.iter().collect();
-    sorted_words.sort_by(|a, b| b.1.partial_cmp(a.1).unwrap());
+    sorted_words.sort_by(|a, b| a.1.partial_cmp(b.1).unwrap());
     for result in sorted_words.iter() {
         println!("{} - {}", result.0, result.1);
     }
