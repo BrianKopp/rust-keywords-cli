@@ -1,5 +1,5 @@
 [package]
-name = "rust-keywords-cli"
+name = "keywords"
 version = "0.1.0"
 authors = ["BrianKopp <briankopp.usa@gmail.com>"]
 edition = "2018"

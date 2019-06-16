@@ -9,7 +9,7 @@ dependencies = [
 ]
 
 [[package]]
-name = "keywords2"
+name = "keywords"
 version = "0.1.0"
 dependencies = [
  "regex 1.1.7 (registry+https://github.com/rust-lang/crates.io-index)",
