@@ -2,6 +2,8 @@ use std::env;
 use std::fs;
 use std::process;
 use std::io;
+extern crate regex;
+use regex::Regex;
 
 fn main() {
     let args: Vec<String> = env::args().collect();
@@ -16,5 +18,10 @@ fn main() {
         process::exit(1)
     }
     let contents = file_content_result.unwrap();
-    println!("{}", contents);
+
+    // create regular expression
+    let re = Regex::new(r"[a-zA-Z_$][a-zA-Z_$0-9]*").unwrap();
+    for content_match in re.find_iter(&contents) {
+        println!("{}", content_match.as_str());
+    }
 }
