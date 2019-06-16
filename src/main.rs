@@ -30,4 +30,11 @@ fn main() {
         *count += 1;
         println!("{} - {}", content_match.as_str(), count);
     }
+
+    println!("Results:");
+    let mut sorted_words: Vec<_> = counts_by_word.iter().collect();
+    sorted_words.sort_by(|a, b| b.1.partial_cmp(a.1).unwrap());
+    for result in sorted_words.iter() {
+        println!("{} - {}", result.0, result.1);
+    }
 }
